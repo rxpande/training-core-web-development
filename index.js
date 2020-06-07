@@ -2,6 +2,7 @@
 import './style.css';
 
 import './array.js';
+import './function.js';
 
 // Write Javascript code!
 const appDiv = document.getElementById('app');
@@ -19,7 +20,7 @@ appDiv.innerHTML = `<h1>JS Starter</h1>
     [array.js]: Arrays (create, indexes, length, modification, built-in methods: sorting, filtering, search, iterating)
   </li>
   <li>
-    Functions (create, invoke)
+    [function.js]: Functions (create, invoke)
   </li>
   <li>
     ES2015 Basics (const, let, arrow functions, default parameters, spread operator, destruction, string templates, for..of loop)</li>
