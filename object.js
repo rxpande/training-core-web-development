@@ -24,27 +24,20 @@ for (let [key, value] of Object.entries(me)) {
 }
 
 // property descriptors
+var pattern = {
+  get() {
+    return 'I always return this string, ' + 'whatever you have assigned';
+  },
+  set() {
+    this.myname = 'this is my name string';
+  }
+};
 
-function Archiver() {
-  var archive = [];
-  var temperature = null;
-
-  Object.defineProperty(this, 'temperature', {
-    get() {
-      console.log('get!');
-      return temperature;
-    },
-    set(value) {
-      temperature = value;
-      archive.push({ val: temperature });
-    }
-  });
-
-  this.getArchive = function() { return archive; };
+function TestDefineSetAndGet() {
+  Object.defineProperty(this, 'myproperty', pattern);
 }
 
-var arc = new Archiver();
-arc.temperature; // 'get!'
-arc.temperature = 11;
-arc.temperature = 13;
-arc.getArchive(); // [{ val: 11 }, { val: 13 }]
+var instance = new TestDefineSetAndGet();
+instance.myproperty = 'test';
+console.log(instance.myproperty); 
+console.log(instance.myname);
