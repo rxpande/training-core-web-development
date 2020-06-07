@@ -1,6 +1,7 @@
 // Import stylesheets
 import './style.css';
 
+import './object.js';
 import './array.js';
 import './function.js';
 
