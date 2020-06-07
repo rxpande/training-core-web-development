@@ -4,5 +4,5 @@ function add (x, y) {
 }
 
 // invoke
-const result = add(1+3);
+const result = add(1, 3);
 console.log(result);
